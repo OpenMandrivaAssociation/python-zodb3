@@ -10,6 +10,7 @@ URL:		http://pypi.python.org/pypi/ZODB3/3.9.0b4
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:	python-devel
+BuildRequires:	python-setuptools
 
 %description
 The Zope Object Database provides an object-oriented database for
