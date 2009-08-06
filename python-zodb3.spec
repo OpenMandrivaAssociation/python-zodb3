@@ -1,6 +1,6 @@
 Name:		python-zodb3
 Version:	3.9.0b4
-Release:	%mkrel 1
+Release:	%mkrel 2
 Group:		Development/Python
 License:	Zope Public License
 Summary:	Zope Object Database: object database and persistence
@@ -12,6 +12,10 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	python-devel
 BuildRequires:	python-setuptools
 
+Requires:	python-transaction
+Requires:	python-zc.lockfile
+Requires:	python-zope.proxy
+
 %description
 The Zope Object Database provides an object-oriented database for
 Python that provides a high-degree of transparency. Applications
@@ -20,7 +24,7 @@ changes to application logic. ZODB includes features such as a
 plugable storage interface, rich transaction support, and undo.
 
 %prep
-%setup -q -q -n ZODB3-%{version}
+%setup -q -n ZODB3-%{version}
 
 %build
 
