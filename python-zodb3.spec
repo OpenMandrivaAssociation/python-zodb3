@@ -1,6 +1,6 @@
 Name:		python-zodb3
 Version:	3.9.0b4
-Release:	%mkrel 2
+Release:	%mkrel 3
 Group:		Development/Python
 License:	Zope Public License
 Summary:	Zope Object Database: object database and persistence
@@ -29,6 +29,7 @@ plugable storage interface, rich transaction support, and undo.
 %build
 
 %install
+PYTHONDONTWRITEBYTECODE= \
 %__python setup.py install --root=%{buildroot} --record=INSTALLED_FILES
 
 %clean
