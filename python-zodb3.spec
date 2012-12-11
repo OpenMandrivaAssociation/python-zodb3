@@ -1,13 +1,11 @@
 Name:		python-zodb3
-Version:	3.9.0b4
-Release:	%mkrel 3
+Version:	3.10.5
+Release:	1
 Group:		Development/Python
 License:	Zope Public License
 Summary:	Zope Object Database: object database and persistence
-# md5=d93e8612e727874255a3f7fa467c7518
-Source:		http://pypi.python.org/packages/source/Z/ZODB3/ZODB3-3.9.0b4.tar.gz
-URL:		http://pypi.python.org/pypi/ZODB3/3.9.0b4
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Source:		http://pypi.python.org/packages/source/Z/ZODB3/ZODB3-3.10.5.tar.gz
+URL:		http://pypi.python.org/pypi/ZODB3/3.10.5
 
 BuildRequires:	python-devel
 BuildRequires:	python-setuptools
@@ -31,9 +29,22 @@ plugable storage interface, rich transaction support, and undo.
 %install
 PYTHONDONTWRITEBYTECODE= \
 %__python setup.py install --root=%{buildroot} --record=INSTALLED_FILES
-
-%clean
-%__rm -rf %{buildroot}
+sed -i 's/.*egg-info$//' INSTALLED_FILES
 
 %files -f INSTALLED_FILES
-%defattr(-,root,root)
+
+
+%changelog
+* Thu Nov 04 2010 Paulo Andrade <pcpa@mandriva.com.br> 3.9.0b4-3mdv2011.0
++ Revision: 593446
++ rebuild (emptylog)
+
+* Fri Aug 07 2009 Paulo Andrade <pcpa@mandriva.com.br> 3.9.0b4-2mdv2010.0
++ Revision: 411009
++ rebuild (emptylog)
+
+* Wed Aug 05 2009 Paulo Andrade <pcpa@mandriva.com.br> 3.9.0b4-1mdv2010.0
++ Revision: 410409
+- Import python-zodb3 version 3.9.0b4
+- python-zodb3
+
