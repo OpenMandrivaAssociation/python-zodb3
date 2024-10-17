@@ -5,7 +5,7 @@ Group:		Development/Python
 License:	Zope Public License
 Summary:	Zope Object Database: object database and persistence
 Source:		http://pypi.python.org/packages/source/Z/ZODB3/ZODB3-3.10.5.tar.gz
-URL:		http://pypi.python.org/pypi/ZODB3/3.10.5
+URL:		https://pypi.python.org/pypi/ZODB3/3.10.5
 
 BuildRequires:	python-devel
 BuildRequires:	python-setuptools
